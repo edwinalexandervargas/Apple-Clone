@@ -5,7 +5,6 @@ import { noChangeParts } from '../../constants'
 import { Color, SRGBColorSpace } from 'three'
 
 export default function MacbookModel16(props) {
-  console.log('MacbookModel16 mounted')
   const { color } = useMacbookStore()
   const { nodes, materials, scene } = useGLTF('/models/macbook-16-transformed.glb')
   const texture = useTexture('/screen.png')
@@ -25,7 +24,6 @@ export default function MacbookModel16(props) {
   useEffect(() => {
     scene.traverse((child) => {
       if(child.isMesh) {
-        console.log(child.name, child.material.type, child.material.emissive)
       }
     })
   }, [scene])
